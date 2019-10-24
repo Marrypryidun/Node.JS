@@ -1,0 +1,13 @@
+[debug] [2019-10-24T15:12:43.493Z] ----------------------------------------------------------------------
+[debug] [2019-10-24T15:12:43.496Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Maria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js use --add
+[debug] [2019-10-24T15:12:43.496Z] CLI Version:   7.6.1
+[debug] [2019-10-24T15:12:43.496Z] Platform:      win32
+[debug] [2019-10-24T15:12:43.496Z] Node Version:  v10.16.3
+[debug] [2019-10-24T15:12:43.498Z] Time:          Thu Oct 24 2019 18:12:43 GMT+0300 (GMT+03:00)
+[debug] [2019-10-24T15:12:43.498Z] ----------------------------------------------------------------------
+[debug] [2019-10-24T15:12:43.498Z] 
+[debug] [2019-10-24T15:12:43.510Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-24T15:12:43.512Z] > authorizing via signed-in user
+[debug] [2019-10-24T15:12:43.518Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=1000  
+ 
+[debug] [2019-10-24T15:12:44.751Z] <<< HTTP RESPONSE 200
