@@ -1,65 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 1</title>
+      <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+  <div class="container">
+    <div><img src="images/img1.jpg" /></div>
+    <div><img src="images/img2.jpg" /></div>
+    <div><img src="images/img3.jpg" /></div>
+    <div><img src="images/img4.jpg" /></div>
+    <div><img src="images/img5.jpg" /></div>
+  </div>
+  <div class="container">
+<h1>Любов до подорожей</h1>
+</div>
+<div class="menu main-menu">
+<ul>
+  <li><a target="_blank" href="file:///E:/2%20%D0%BA%D1%83%D1%80%D1%81/Web/lab-2/map.html">Цікаві місця</a></li>
+  <li><a target="_blank" href="file:///E:/2%20%D0%BA%D1%83%D1%80%D1%81/Web/lab-2/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B8.html">Книги про подорожі</a></li>
+  <li><a target="_blank" href="file:///E:/2%20%D0%BA%D1%83%D1%80%D1%81/Web/lab-2/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82.html">Про проект</a></li>
+  <li><a target="_blank" href="file:///E:/2%20%D0%BA%D1%83%D1%80%D1%81/Web/lab-2/%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%87%D0%BA%D0%B0%201.html">Таблички</a></li>
+</ul>
+<h2>Подорожуйте. Якнайбільше.</h2>
+<span>
+  Подорожі змінюють нас. Вони допомагають відповісти нам на багато питань. Вони надихають. Вони змушують перестати боятися.
+   Подорож — це та сама річ, яка допоможе вам відчути себе живим, а це літо — ще одна чудова пора для того, щоб подорожувати.
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.2.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.2.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.2.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.2.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.2.1/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+  Ви їдете зі свого рідного міста лише під час відпустки? Навіщо чекати так довго?
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  Киньте собі виклик з сьогоднішнього дня: прийміть рішення відвідувати якусь нову для себе частину свого міста/країни/іншу країну,
+   та будь що, настільки часто, як би вам це вийшло.
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  Знайдіть спосіб вибратися за межі міста вже на цих вихідних. Поїдьте в сусідню область або на природу з наметами.
+  Присвятіть час тому, щоб побачити світ і відчути повноту життя, бо жити — значить безупинно рухатися вперед.
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+  І пам'ятайте: можливостей є безліч — вам лише потрібно спробувати ними скористатися!
+</span>
+</div>
+<blockquote>
+  <p>Іноді один день, проведений в інших місцях, дає більше, ніж десять років життя вдома</p>
+  <footer>— <cite>Анатоль Франс</cite></footer>
+</blockquote>
+</body>
 </html>
