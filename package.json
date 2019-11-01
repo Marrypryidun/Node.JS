@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run",
-    "lint": "eslint .",
-    "build": "index.js"
+    "test": "npm run lint",
+    "lint": "eslint -ignore-path .gitignore .",
+   "start": "index.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,16 +17,14 @@
   },
   "devDependencies": {
     "conventional-changelog-cli": "^2.0.25",
-    "esdoc": "^1.1.0",
     "eslint": "^6.5.1",
     "husky": "^3.0.9",
-    "mocha": "^6.2.2",
     "prettier": "^1.18.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
-        "pre-push": "npm test"
+      "precommit": "npm run prettier",
+      "prepush": "npm run test"
       }
   }
   
