@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run lint",
-    "lint": "eslint -ignore-path .gitignore index.js",
-    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
-   "start": "index.js"
+    "lint": "eslint -ignore-path .gitignore .",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "author": "",
   "license": "ISC",
