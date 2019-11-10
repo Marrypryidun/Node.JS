@@ -1,47 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 <head>
-    <meta charset="UTF-8">
-    <title>Лабораторна 1</title>
-      <link rel="stylesheet" type="text/css" href="../style.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equit="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ <title>Чат програми</title>
+ <style>
+     body{
+         background: #ecd0d0;
+     }
+ </style>
 </head>
 <body>
-  <div class="container">
-    <div><img src="images/img1.jpg" /></div>
-    <div><img src="images/img2.jpg" /></div>
-    <div><img src="images/img3.jpg" /></div>
-    <div><img src="images/img4.jpg" /></div>
-    <div><img src="images/img5.jpg" /></div>
-  </div>
-  <div class="container">
-<h1>Любов до подорожей</h1>
-</div>
-<div class="menu main-menu">
-<ul>
-  <li><a target="_blank" href="*">Цікаві місця</a></li>
-  <li><a target="_blank" href="*">Книги про подорожі</a></li>
-  <li><a target="_blank" href="*">Про проект</a></li>
-  <li><a target="_blank" href="*">Таблички</a></li>
-</ul>
-<h2>Подорожуйте. Якнайбільше.</h2>
-<span>
-  Подорожі змінюють нас. Вони допомагають відповісти нам на багато питань. Вони надихають. Вони змушують перестати боятися.
-   Подорож — це та сама річ, яка допоможе вам відчути себе живим, а це літо — ще одна чудова пора для того, щоб подорожувати.
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>
+                Чат програма
+            </h2>
+            <p class="lead">Вкажіть ім'я і почніть переписку</p>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h3>
+                    Форма повідомленння
+                </h3>
+                <form id="messForm">
+                    <label for="name">Ім'я</label>
+                    <input type="text" name="name" id="name" placeholder="Введіть ім'я" class="form-control">
+                   <br>
+                    <label for="massage">Повідомлення</label>
+                    <textarea name="massage" id="massage" class="form-control" placeholder="Введіть повідомлення"></textarea>
+                    <br>
+                    <input type="submit" value="Відправити" class="btn btn-danger">
 
-  Ви їдете зі свого рідного міста лише під час відпустки? Навіщо чекати так довго?
+                </form>
+            </div>
+            <div class="col-6">
+                <h3>Повідомлення</h3>
+                <div id="all_mess"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+     var min = 1;
+        var max = 6;
+        var random = Math.floor(Math.random()*(max-min)) + min;
+        var alertClass;
+        switch(random){
+            case 1:
+                alertClass = 'secondary';
+                break;
+            case 2: 
+                alertClass = 'danger';
+                break;
+            case 3:
+                alertClass = 'success';
+                break;
+            case 3:
+                alertClass = 'warning';
+                break;
+            case 4:
+                alertClass = 'warning';
+                break;
+            case 5:
+                alertClass = 'info';
+                break;
+            case 6:
+                alertClass = 'light';
+                break;
+        };
+        $(function(){
+            var socket=io.connect();
+            var $form = $("#messForm");
+            var $name = $("#name");
+            var $textarea = $("#massage");
+            var $all_massage = $("#all_mess");
 
-  Киньте собі виклик з сьогоднішнього дня: прийміть рішення відвідувати якусь нову для себе частину свого міста/країни/іншу країну,
-   та будь що, настільки часто, як би вам це вийшло.
+            $form.submit(function(event){
+                event.preventDefault();
+                socket.emit('send mess',{mess: $textarea.val(),name: $name.val(), className: alertClass});
+                $textarea.val('');
+            });
 
-  Знайдіть спосіб вибратися за межі міста вже на цих вихідних. Поїдьте в сусідню область або на природу з наметами.
-  Присвятіть час тому, щоб побачити світ і відчути повноту життя, бо жити — значить безупинно рухатися вперед.
+            socket.on('add mess', function(data){
+             $all_massage.append("<div class ='alert alert-" + data.className + "'><b>"  +data.name+"</b>: " + data.mess + "</div>");
+            });
+        });
+    </script>
 
-  І пам'ятайте: можливостей є безліч — вам лише потрібно спробувати ними скористатися!
-</span>
-</div>
-<blockquote>
-  <p>Іноді один день, проведений в інших місцях, дає більше, ніж десять років життя вдома</p>
-  <footer>— <cite>Анатоль Франс</cite></footer>
-</blockquote>
 </body>
 </html>
