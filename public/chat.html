@@ -4,7 +4,7 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equit="X-UA-Compatible" content="ie=edge">
- <link rel="stylesheet" href="bootstrap.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
  <title>Чат програми</title>
  <style>
      body{
@@ -73,16 +73,16 @@
                 break;
         };
         $(function(){
-            var socket=io.connect();
+            var socket=io.connect(); //коли заходимо на сторінку з'єднання
             var $form = $("#messForm");
             var $name = $("#name");
             var $textarea = $("#massage");
             var $all_massage = $("#all_mess");
 
             $form.submit(function(event){
-                event.preventDefault();
-                socket.emit('send mess',{mess: $textarea.val(),name: $name.val(), className: alertClass});
-                $textarea.val('');
+                event.preventDefault(); // при натисканні на кнопку сторінка не буде перезагружатися
+                socket.emit('send mess',{mess: $textarea.val(),name: $name.val(), className: alertClass});// створюємо подію
+                $textarea.val(''); // очищуємо текстове поле
             });
 
             socket.on('add mess', function(data){

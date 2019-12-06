@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run lint",
     "lint": "eslint -ignore-path .gitignore .",
-    "deploy": "firebase deploy --token $FIREBASE_TOKEN"
+    "start": "lite-server"
   },
   "author": "",
   "license": "ISC",
@@ -21,12 +21,24 @@
     "conventional-changelog-cli": "^2.0.25",
     "eslint": "^6.5.1",
     "husky": "^3.0.9",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "lite-server": "^2.2.1"
   },
   "husky": {
     "hooks": {
       "precommit": "npm run prettier",
       "prepush": "npm run test"
     }
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-0"
+    ]
   }
 }
