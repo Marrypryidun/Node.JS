@@ -3,6 +3,29 @@
 <head>
     <meta charset="utf-8" />
     <title>Маршруты в React</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+      h3.masthead-brand
+      {
+        font-size: 500%;
+      }
+      .one {
+        background-color: darkgrey;
+        background-size: cover; 
+      }
+      .my {
+        position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: url(images/img1.jpg); /* Параметры фона */
+    background-size: cover; 
+      }
+    
+      
+    </style>
 </head>
 <body>
     <div id="app"></div>
@@ -16,29 +39,159 @@
     const Router = ReactRouterDOM.BrowserRouter;
     const Route = ReactRouterDOM.Route;
     const Switch = ReactRouterDOM.Switch;
+    const Link = ReactRouterDOM.Link;
         
-    class About extends React.Component{
+    class Details extends React.Component{
         render(){
-            return <h2>О сайте</h2>;
+            return<main role="main">
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Музеї</h1>
+      <p class="lead my-3">Мистецтво усюди, навіть там, де його,здається, побачити неможливо... </p>
+      <p class="lead mb-0"><Link to="/info" class="text-white font-weight-bold">Продовжити...</Link></p>
+    </div>
+  </div>
+<div class="container marketing">
+
+  <div class="row">
+    <div class="col-lg-4">
+    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/museum1.jpg"></img>
+       <h2>Музей Ханенків</h2>
+      <p>Музей Ханенків (повна назва: Національний музей мистецтв імені Богдана та Варвара Ханенків) – чільний музей світового мистецтва в Україні. Музей презентує найзначніші колекції мистецтва Європи, Азії та Давнього світу в Україні. «Серцем» музею є художнє зібрання Богдана та Варвари Ханенків – видатних українських колекціонерів та благодійників кінця 19 – початку 20 століття.</p>
+      <p><a class="btn btn-secondary" href="https://www.khanenkomuseum.kiev.ua/uk/golovna" role="button">Дізнатися більше... »</a></p>
+    </div>
+    <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/pinchuck.jpg"></img>
+    
+     <h2>PinchukArtCentre</h2>
+      <p>PinchukArtCentre – це міжнародний центр сучасного мистецтва XXI сторіччя, відкрита платформа для митців, мистецтва та суспільства.</p>
+      <p><a class="btn btn-secondary" href="http://new.pinchukartcentre.org/" role="button">View details »</a></p>
+    </div>
+    <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/m3.jpg"></img>
+    
+      <h2>Музей медуз</h2>
+      <p>Музей медуз – це абсолютно новий та сміливий проект, про який ось уже протягом багатьох років мріяв колектив професійних акваріумістів під керівництвом Олександра Яновського. Ця команда вже успішно реалізувала чимало цікавих та амбітних проектів, серед яких - Київський океанаріум «Морська казка» та найвищий акваріум України, створений у Львові, в ресторані «36ПО».</p>
+      <p><a class="btn btn-secondary" href="http://jellyfishmuseum.com.ua/" role="button">View details »</a></p>
+    </div>
+  </div>
+</div>
+</main>;      
         }
     }
-    class NotFound extends React.Component{
+    class Info extends React.Component{
         render(){
-            return <h2>Ресурс не найден</h2>;
+            return <div> <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Моя галерея</a>
+       
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <Link class="nav-link" to="/">Домашня сторінка </Link>
+            </li>
+            <li class="nav-item active">
+              <Link class="nav-link" to="/info">Вистакви<span class="sr-only">(current)</span></Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link " to="/details" tabindex="-1" aria-disabled="true">Галереї</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Виставки</h1>
+    <p class="lead font-weight-normal">Черпнути натхнення  це як зробити крок від геніальності до божжевілля... Знищити все, щоб створити заново.</p>
+    <Link class="btn btn-outline-secondary"  to="/details">Більше...</Link>
+  </div>
+</div>
+
+    
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Ukraine WOW  <span class="text-muted">- Інтерактивна виставка</span></h2>
+            <p class="lead">З 14 листопада по 29 грудня на Центральному київському вокзалі пройде інтерактивна виставка Ukraine WOW. 
+
+Унікальні експонати та інсталяції, які змусять вас закохатись в Україну та сказати: «Вау, яка вона неймовірна!» </p>
+          </div>
+          <div class="col-md-5">
+          <img  src="images/wow.jpg"></img>
+            </div>
+        </div>
+    
+     
+    
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Виставка винної акварелі  <span class="text-muted">PIEDMONT DREAMS</span></h2>
+            <p class="lead">17 грудня в Montecchi Capuleti буде презентовано персональний проект художниці Юлії Захарової «Piedmont dreams».
+
+Серія робіт «Piedmont dreams» складається з 21 роботи, виконаних в унікальній акварельній техніці за допомогою автентичних вин з регіону П'ємонт.  Акварелі не містять ніяких додаткових фарб, окрім вина.  Кожна робота намальована за допомогою спеціальної техніки саме тим вином, яке виробляється на конкретній виноробні або в даному субрегіоні (наприклад, виноробня Pio Cesare - вино Pio Cesare Barolo Ornato).
+ https://moemisto.ua/kiev/yuliya-zaharova-vistavka-vinnoyi-akvareli-piedmont-dreams-194779.html</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img  src="images/Piedmont.jpg" ></img>
+            </div>
+        </div>
+    
+     
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Фестиваль гігантських китайських ліхтарів <span class="text-muted">Співоче поле</span></h2>
+            <p class="lead">Гігантські світлові інсталяції у самому центрі Києва! Співоче поле запрошує на Фестиваль гігантських китайських ліхтарів! Він проходитиме з 13 грудня до 2 лютого. Початок - о 16.00. 
+
+Загалом на Співочому полі облаштують 30 тематичних локацій.</p>
+          </div>
+          <div class="col-md-5">
+              <img  src="images/lantern.jpg" ></img>
+              </div>
+        </div>
+</div>;
         }
     }
       
-    class Main extends React.Component{
+    class Start extends React.Component{
         render(){
-            return <h2>Главная</h2>;
+            return <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Моя галерея</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <Link class="nav-link active" to="/">Домашня сторінка</Link>
+        <Link class="nav-link" to="/info">Виставки</Link>
+        <Link class="nav-link" to="/details">Галереї</Link>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Перший крок на зустріч мистецтву</h1>
+    <p class="lead">Мистецтво не підробляє і не замінює реальний світ, а пояснює його, розширює і продовжує. (К.Ф. Юон )</p>
+    <p class="lead">
+      <Link to="/info" class="btn btn-lg btn-secondary">Дізнатися більше</Link>
+      
+    </p>
+    <img width="800px" height=" auto" src="images/gallery.jpg" alt="альтернативный текст"></img>
+  </main>
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Created  by <a href="https://www.instagram.com/marry_pryidun/?hl=uk">@marry_pryidun</a>.</p>
+    </div>
+  </footer>
+</div>
+
+
+</body>;
         }
     }
     ReactDOM.render(
         <Router>
             <Switch>
-                <Route exact path="/" component={Main} />
-                <Route path="/about" component={About} />
-                <Route component={NotFound} />
+                <Route exact path="/" component={Start} />
+                <Route path="/details" component={Details} />
+                <Route path="/info" component={Info}  />
+                <Route component={Start} />
             </Switch>
         </Router>,
         document.getElementById("app")

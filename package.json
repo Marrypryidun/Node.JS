@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint",
+    "test": "npm start",
     "lint": "eslint -ignore-path .gitignore .",
     "start": "lite-server"
   },
@@ -26,7 +26,8 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "lite-server": "^2.2.1"
+    "lite-server": "^2.2.2"
+
   },
   "husky": {
     "hooks": {
@@ -34,11 +35,7 @@
       "prepush": "npm run test"
     }
   },
-  "babel": {
-    "presets": [
-      "env",
-      "react",
-      "stage-0"
-    ]
-  }
+  "babel" : {
+    "presets": ["env", "react", "stage-0"]
+    }
 }
