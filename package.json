@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm start",
-    "lint": "eslint -ignore-path .gitignore .",
+    "test": "npm run",
+    "lint": "eslint .",
+    "build": "index.js",
     "start": "lite-server"
   },
   "author": "",
